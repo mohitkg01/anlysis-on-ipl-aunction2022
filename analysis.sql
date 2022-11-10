@@ -12,7 +12,12 @@ select distinct(country) from ipl.ipl_auction_2022_fulllist;
 
 #No of Players from diffrent country
 select country,count(country) as no_of_players from ipl.ipl_auction_2022_fulllist
- group by country order by no_of_players desc;
+group by country order by no_of_players desc;
+
+#No of Players from diffrent country those are sold
+select country,count(country) as no_of_player_sold from ipl.ipl_auction_2022_fulllist where team !='unsold'
+group by country order by no_of_player_sold desc;
+
 
 #total capped player
 select count(CaUcAs) as Capped_player from ipl.ipl_auction_2022_fulllist where CaUcAs  like 'capped%';
